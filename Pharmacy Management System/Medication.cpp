@@ -61,13 +61,7 @@ void Medication::setQuantity(int quantityInStock) {
 }
 
 void Medication::setExpiry(int expiryDate) {
-    if (expiryDate >= 20250101 && expiryDate <= 20991231) {
         expiryDate_ = expiryDate;
-    }
-    else {
-        cout << "Error: Please provide a valid expiry date (YYYYMMDD format)." << endl;
-        expiryDate_ = 0;
-    }
 }
 
 void Medication::setBrcode(string barcode) {
