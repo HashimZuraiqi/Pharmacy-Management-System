@@ -17,7 +17,7 @@ public:
 	void setStreet(string);
 	string getEmail();
 	string getCity();
-	string getstreet();
+	string getStreet();
 
 	void printData();
 };
