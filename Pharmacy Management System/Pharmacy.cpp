@@ -45,3 +45,29 @@ void Pharmacy::removeMedication(int medID) {
 		}
 	}
 }
+void Pharmacy::addCustomers(Customer& c) {
+	if (custCount < 50) {
+		customers_[custCount] = c;
+		custCount++;
+	}
+	else {
+		cout << "Reached The Maximum Size." << endl;
+	}
+
+}
+void Pharmacy::displayMedications() {
+	for (int i = 0; i < medCount; i++) {
+		cout << "======================" << endl;
+		cout << "Medication (" << i + 1 << "):" << endl;
+		medications_[i].printData();
+		cout << "======================" << endl;
+	}
+}
+void Pharmacy::displayCustomers() {
+	for (int i = 0; i < custCount; i++) {
+		cout << "======================" << endl;
+		cout << "Medication (" << i + 1 << "):" << endl;
+		customers_[i].printData();
+		cout << "======================" << endl;
+	}
+}

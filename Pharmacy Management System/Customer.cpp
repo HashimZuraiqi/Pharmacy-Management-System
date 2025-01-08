@@ -51,5 +51,5 @@ void Customer::printData() {
 		<< "Name: " << getCustomerName() << "\n"
 		<< "ID: " << getCustomerID() << "\n"
 		<< "Phone Number: " << getPhoneNum() << "\n"
-		<< "Address: " << address_.getCity() << "\t" << address_.getEmail() << '\t' << address_.getstreet() << '\n';
+		<< "Address: " << address_.getCity() << "\t" << address_.getEmail() << '\t' << address_.getStreet() << '\n';
 }

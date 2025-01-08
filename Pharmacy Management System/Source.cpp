@@ -15,6 +15,7 @@ int main() {
         cout << "4. Display Customers\n";
         cout << "5. Go To The Next Pharmacy\n";
         cout << "6. Exit\n";
+        cout << "7. Remove Medication\n";
         cout << "Enter your choice: ";
         cin >> choice;
         if (choice == 1) {
@@ -27,7 +28,8 @@ int main() {
             cout << "Enter Medication Name: " << endl;
             cin >> medicationName;
             cout << "Enter Medication Description: " << endl;
-            cin >> description;
+            cin.ignore();
+            getline(cin,description);
             cout << "Enter Medication Price: " << endl;
             cin >> price;
             cout << "Enter Medication Quatnity: " << endl;
@@ -53,9 +55,11 @@ int main() {
             cout << "1--> Email:\t";
             cin >> email;
             cout << "\n2--> City:\t";
-            cin >> city;
+            cin.ignore();
+            getline(cin, city);
             cout << "\n3--> Street Name:\t";
-            cin >> streetName;
+            cin.ignore();
+            getline(cin, streetName);
             Address ad(email, city, streetName);
             Customer temp(customerName, phoneNum, ad);
             pharmacies[pharmCount].addCustomers(temp);
@@ -71,6 +75,12 @@ int main() {
         }
         else if (choice == 6) {
             break;
+        }
+        else if (choice == 7) {
+            int num;
+            cout << "Choose The Number of Medication that you need to remove: " << endl;
+            cin >> num;
+            pharmacies[pharmCount].removeMedication(num);
         }
         else {
             cout << "Error. Please Enter A Valid Choice:" << endl;
