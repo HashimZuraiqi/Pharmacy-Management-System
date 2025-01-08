@@ -30,6 +30,6 @@ string Address::getStreet() {
 }
 void Address::printData() {
 	cout << "Email: " << getEmail()
-		 << "City: " << getCity()
-		 << "Street: " << getStreet();
+		 << "\nCity: " << getCity()
+		 << "\nStreet: " << getStreet() << endl;
 }
