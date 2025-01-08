@@ -1,10 +1,11 @@
 #include "Customer.h"
-Customer::Customer() :customerID_(-1){
+int Customer::counter = 0;
+Customer::Customer() : customerID_(++counter) {
 	customerName_ = "No Name provided.";
 	phoneNum_ = "No PhoneNumber provided.";
 	address_ = "No Adress provided.";
 }
-Customer::Customer(string name, int id, string phone, string address): customerID_(id){
+Customer::Customer(string name, string phone, string address) : customerID_(++counter){
 	setCustomerName(name);
 	setPhoneNum(phone);
 	setAddress(address);
@@ -39,7 +40,7 @@ void Customer::setAddress(string address) {
 string Customer::getCustomerName() {
 	return customerName_;
 }
-int Customer::getCustomerID() const {
+int Customer::getCustomerID() {
 	return customerID_;
 }
 string Customer::getPhoneNum() {

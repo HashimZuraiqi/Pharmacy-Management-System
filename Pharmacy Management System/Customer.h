@@ -8,17 +8,18 @@ class Customer
 {
 private:
 	string customerName_;
-	const int customerID_;
+	int customerID_;
+	static int counter;
 	string phoneNum_;
 	string address_;
 public:
 	Customer();
-	Customer(string,int,string, string);
+	Customer(string,string,string);
 	void setCustomerName(string);
 	void setPhoneNum(string);
 	void setAddress(string);
 	string getCustomerName();
-	int getCustomerID() const;
+	int getCustomerID();
 	string getPhoneNum();
 	string getAddress();
 	void printData();
