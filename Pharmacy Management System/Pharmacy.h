@@ -19,7 +19,7 @@ public:
 	string setPharmacyName();
 	void getPharmacyName();
 	void addMedication(Medication&);
-	void addCustomers();
+	void addCustomers(Customer&);
 	void removeMedication(Medication&);
 	void displayMedications();
 	void displayCustomers();

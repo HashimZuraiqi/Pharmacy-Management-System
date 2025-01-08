@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include "Pharmacy.h"
 using namespace std;
 
@@ -58,7 +57,8 @@ int main() {
             cout << "\n3--> Street Name:\t";
             cin >> streetName;
             Address ad(email, city, streetName);
-            Customer(customerName, phoneNum, ad);
+            Customer temp(customerName, phoneNum, ad);
+            pharmacies[pharmCount].addCustomers(temp);
         }
         else if (choice == 3) {
             pharmacies[pharmCount].displayMedications();
