@@ -10,17 +10,17 @@ private:
 	string customerName_;
 	const int customerID_;
 	string phoneNum_;
-	string adress_;
+	string address_;
 public:
 	Customer();
 	Customer(string,int,string, string);
 	void setCustomerName(string);
 	void setPhoneNum(string);
-	void setAdress(string);
+	void setAddress(string);
 	string getCustomerName();
 	int getCustomerID() const;
 	string getPhoneNum();
-	string getAdress();
+	string getAddress();
 	void printData();
 };
 #endif // !CUSTOMER_H

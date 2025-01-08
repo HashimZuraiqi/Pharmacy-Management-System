@@ -2,12 +2,12 @@
 Customer::Customer() :customerID_(-1){
 	customerName_ = "No Name provided.";
 	phoneNum_ = "No PhoneNumber provided.";
-	adress_ = "No Adress provided.";
+	address_ = "No Adress provided.";
 }
-Customer::Customer(string name, int id, string phone, string adress): customerID_(id){
+Customer::Customer(string name, int id, string phone, string address): customerID_(id){
 	setCustomerName(name);
 	setPhoneNum(phone);
-	setAdress(adress);
+	setAddress(address);
 }
 void Customer::setCustomerName(string name) {
 	if (name.length() > 1) {
@@ -27,9 +27,9 @@ void Customer::setPhoneNum(string phone) {
 		phoneNum_ = "No Phone provided.";
 	}
 }
-void Customer::setAdress(string adress) {
-	if (adress.length() > 1) {
-		adress_ = adress;
+void Customer::setAddress(string address) {
+	if (address.length() > 1) {
+		address_ = address;
 	}
 	else {
 		cout << "please provide a valid adress." << endl;
@@ -45,13 +45,13 @@ int Customer::getCustomerID() const {
 string Customer::getPhoneNum() {
 	return phoneNum_;
 }
-string Customer::getAdress() {
-	return adress_;
+string Customer::getAddress() {
+	return address_;
 }
 void Customer::printData() {
-	cout << "Here is this customer data:" << endl;
-	cout << "Name: " << getCustomerName() << endl;
-	cout << "ID: " << getCustomerID() << endl;
-	cout << "Phone Number: " << getPhoneNum() << endl;
-	cout << "Adress: " << getAdress() << endl;
+	cout << "Here is this customer's data:\n"
+		<< "Name: " << getCustomerName() << "\n"
+		<< "ID: " << getCustomerID() << "\n"
+		<< "Phone Number: " << getPhoneNum() << "\n"
+		<< "Address: " << getAddress() << "\n";
 }
