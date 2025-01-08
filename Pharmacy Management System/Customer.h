@@ -2,6 +2,7 @@
 #define CUSTOMER_H
 #include <iostream>
 #include <string>
+#include "Adress.h"
 using namespace std;
 
 class Customer
@@ -11,17 +12,17 @@ private:
 	int customerID_;
 	static int counter;
 	string phoneNum_;
-	string address_;
+	Address address_;
 public:
 	Customer();
-	Customer(string,string,string);
+	Customer(string,string,Address);
 	void setCustomerName(string);
 	void setPhoneNum(string);
-	void setAddress(string);
+	void setAddress(string,string,string);
 	string getCustomerName();
 	int getCustomerID();
 	string getPhoneNum();
-	string getAddress();
+	Address getAddress();
 	void printData();
 };
 #endif // !CUSTOMER_H

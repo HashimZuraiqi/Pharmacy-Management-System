@@ -3,12 +3,13 @@ int Customer::counter = 0;
 Customer::Customer() : customerID_(++counter) {
 	customerName_ = "No Name provided.";
 	phoneNum_ = "No PhoneNumber provided.";
-	address_ = "No Adress provided.";
+	address_.setCity("No City Provided.");
+	address_.setEmail("No Email Provided.");
+	address_.setStreet("No Street Provided.");
 }
-Customer::Customer(string name, string phone, string address) : customerID_(++counter){
+Customer::Customer(string name, string phone, Address address) : customerID_(++counter) , address_(address){
 	setCustomerName(name);
 	setPhoneNum(phone);
-	setAddress(address);
 }
 void Customer::setCustomerName(string name) {
 	if (name.length() > 1) {
@@ -28,14 +29,10 @@ void Customer::setPhoneNum(string phone) {
 		phoneNum_ = "No Phone provided.";
 	}
 }
-void Customer::setAddress(string address) {
-	if (address.length() > 1) {
-		address_ = address;
-	}
-	else {
-		cout << "please provide a valid adress." << endl;
-		customerName_ = "No adress provided.";
-	}
+void Customer::setAddress(string email,string city , string streetName) {
+	address_.setCity(city);
+	address_.setEmail(email);
+	address_.setStreet(streetName);
 }
 string Customer::getCustomerName() {
 	return customerName_;
@@ -46,7 +43,7 @@ int Customer::getCustomerID() {
 string Customer::getPhoneNum() {
 	return phoneNum_;
 }
-string Customer::getAddress() {
+Address Customer::getAddress() {
 	return address_;
 }
 void Customer::printData() {
@@ -54,5 +51,5 @@ void Customer::printData() {
 		<< "Name: " << getCustomerName() << "\n"
 		<< "ID: " << getCustomerID() << "\n"
 		<< "Phone Number: " << getPhoneNum() << "\n"
-		<< "Address: " << getAddress() << "\n";
+		<< "Address: " << address_.getCity() << "\t" << address_.getEmail() << '\t' << address_.getstreet() << '\n';
 }
